@@ -1,0 +1,4 @@
+# ignore environment folder
+/env
+
+/app.yaml
