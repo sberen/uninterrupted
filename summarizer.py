@@ -1,5 +1,4 @@
 import requests
-import json
 
 def summary_from_url(url, sentences):
   f = open("key.txt", "r")
@@ -22,7 +21,7 @@ def summary_from_text(txt, sentences):
 def summary(querystring):
   url = "https://api.meaningcloud.com/summarization-1.0"
   response = requests.request("Post", url, headers=None, params=querystring)
-  data = json.loads(response.text)
+  data = response.json()
 
   return(data["summary"])
 
