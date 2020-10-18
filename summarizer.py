@@ -22,6 +22,7 @@ def summary(querystring):
   url = "https://api.meaningcloud.com/summarization-1.0"
   response = requests.request("Post", url, headers=None, params=querystring)
   data = response.json()
+  print(data)
 
   return(data["summary"])
 
