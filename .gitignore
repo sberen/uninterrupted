@@ -1,2 +1,10 @@
+<<<<<<< HEAD
+# ignore environment folder
+/env
+
+/app.yaml
+key.txt
+=======
 key.txt
 __pycache__/
+>>>>>>> ba00f6b5a584984d00c4686481d27d6bdc328b67
