@@ -42,7 +42,7 @@ numCandidates = df.shape[1]
 for i in range(numIssues) :
   issue = df['Topic'][i]
 
-  for j in range(2, numCandidates) :
+  for j in range(1, numCandidates) :
     summaries = []
     candidate = list(df)[j]
     source = df.iloc[i, j]
@@ -65,6 +65,7 @@ for i in range(numIssues) :
       print('Candidate: ', candidate)
       # print(summary)
       summaries.append(summary)
+      time.sleep(10)
 
     post_request(i * 2 + j, candidates[j-1], issue, summaries, source)
 
