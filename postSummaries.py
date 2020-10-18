@@ -2,6 +2,11 @@ import pandas as pd
 import summarizer
 
 summaryLengths = [2, 4, 6]
+lengthToDescriptor = {
+  2: 'short',
+  4: 'medium',
+  6: 'long',
+}
 
 df = pd.read_csv('content.csv')
 
@@ -18,6 +23,7 @@ for i in range(numIssues) :
     isURL = content.startswith('http')
     for k in range(len(summaryLengths)) :
       numSentences = summaryLengths[k]
+      lengthDescriptor = lengthToDescriptor.get(numSentences)
       if isURL:
         # summary = summarizer.summary_from_url(content, numSentences)
         summary = 'url'
@@ -29,4 +35,5 @@ for i in range(numIssues) :
       print('Issue: ', issue)
       print('Candidate: ', candidate)
       print('Sentences: ', numSentences)
+      print('Length Description: ', lengthDescriptor)
       print(summary)
