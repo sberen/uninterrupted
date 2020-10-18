@@ -34,7 +34,7 @@ for i in range(numIssues) :
         source = 'https://' + partition[0]
         text = partition[2]
         print(text)
-        # summary = summarizer.summary_from_text(content, numSentences)
+        # summary = summarizer.summary_from_text(text, numSentences)
         summary = 'text'
       # Post summary to API
       print('=====================')
