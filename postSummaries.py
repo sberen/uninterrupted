@@ -20,14 +20,20 @@ for i in range(numIssues) :
     candidate = list(df)[j]
     content = df.iloc[i, j]
     summary = ''
+    source = ''
     isURL = content.startswith('http')
     for k in range(len(summaryLengths)) :
       numSentences = summaryLengths[k]
       lengthDescriptor = lengthToDescriptor.get(numSentences)
       if isURL:
+        source = content
         # summary = summarizer.summary_from_url(content, numSentences)
         summary = 'url'
       else :
+        partition = content.partition('\n')
+        source = 'https://' + partition[0]
+        text = partition[2]
+        print(text)
         # summary = summarizer.summary_from_text(content, numSentences)
         summary = 'text'
       # Post summary to API
@@ -36,4 +42,5 @@ for i in range(numIssues) :
       print('Candidate: ', candidate)
       print('Sentences: ', numSentences)
       print('Length Description: ', lengthDescriptor)
+      print('Source: ', source)
       print(summary)
