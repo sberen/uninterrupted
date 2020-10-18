@@ -4,7 +4,7 @@ import summarizer
 summaryLengths = [2, 4, 6]
 lengthToDescriptor = {
   2: 'short',
-  4: 'medium',
+  4: 'med',
   6: 'long',
 }
 
